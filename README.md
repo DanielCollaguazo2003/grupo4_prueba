@@ -82,7 +82,6 @@ FastAPI ofrece una documentación interactiva generada automáticamente:
 
 - **POST** `/habitaciones`: Agrega una nueva habitación.
 
-*(Agrega más detalles si es necesario)*
 
 ## 7. Desactivación del Entorno Virtual
 
