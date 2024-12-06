@@ -11,3 +11,7 @@ class Habitacion(BaseModel):
     estado: bool
     precio_por_noche: float
     precio_por_dia: float
+
+class Servicio(BaseModel):
+    descripcion: str
+    precio: float
