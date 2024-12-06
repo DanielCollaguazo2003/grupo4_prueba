@@ -1,11 +1,19 @@
-from fastapi import FastAPI
-from src import models, main
-import uvicorn
-import logging
+try:
+    from fastapi import FastAPI
+    from src import models, main
+    import uvicorn
+    import logging
+except Exception as e:
+    print(f"Error al importar las librerias en app.py, {e}")
 
 logger = logging.getLogger("uvicorn.error")
 
-app = FastAPI(debug=True)
+app = FastAPI(
+        debug=True,
+        title="API Reserva de Hoteles",
+        description="Api desarrollada con el framework FastAPI y PostgreSQLpara cumplir con la funcionalidad de un Reserva de Hotel, permite crear clientes, servicios, habitaciones, reservas, facturas y pagos.",
+        version="1.0.0"
+    )
 
 try:
     @app.post("/clientes")
