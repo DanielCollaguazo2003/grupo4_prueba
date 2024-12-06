@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from datetime import date
 
 class Cliente(BaseModel):
     nombre: str
@@ -15,3 +16,10 @@ class Habitacion(BaseModel):
 class Servicio(BaseModel):
     descripcion: str
     precio: float
+
+class Reserva(BaseModel):
+    id_cliente: int
+    fecha_reserva: date
+    duracion_estancia: int
+    estado_reserva: str
+    monto_total: float
