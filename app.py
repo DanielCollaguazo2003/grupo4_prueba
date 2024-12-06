@@ -4,19 +4,19 @@ try:
     import uvicorn
     import logging
 except Exception as e:
-    print(f"Error al importar las librerias en app.py, {e}")
+    print(f"ERROR al importar las librerias en app.py, {e}")
 
 logger = logging.getLogger("uvicorn.error")
 
 app = FastAPI(
-        debug=True,
-        title="API Reserva de Hoteles",
-        description="Api desarrollada con el framework FastAPI y PostgreSQLpara cumplir con la funcionalidad de un Reserva de Hotel, permite crear clientes, servicios, habitaciones, reservas, facturas y pagos.",
-        version="1.0.0"
-    )
+    debug=True,
+    title="API desarrollada para la Reserva de Hoteles",
+    description="API desarrollada con FastAPI y PortgreSQL, permite crear clientes, servicios, habitaciones, reservas, facturas y pagos",
+    version="1.0.0"
+)
 
 try:
-    @app.post("/clientes")
+    @app.post("/clientes", description="Endpoint para guardar CLIENTES")
     def api_agregar_cliente(cliente: models.Cliente):
         return main.agregar_cliente(cliente)
 
