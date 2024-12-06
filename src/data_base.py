@@ -26,3 +26,15 @@ def get_db_connection():
     except Exception as e:
         print("")
         #raise HTTPException(status_code=500, detail=f"Error al conectar con la base de datos: {e}")
+
+def execute_query(query: str, params: tuple = ()):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute(query, params)
+        conn.commit()
+        print("Creado correctamente")
+        return cursor  # Devuelve el cursor para que sea gestionado después
+    except Exception as e:
+        conn.rollback()
+        raise HTTPException(status_code=500, detail=f"Error al ejecutar la consulta: {e}")
