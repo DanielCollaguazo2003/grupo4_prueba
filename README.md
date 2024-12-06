@@ -14,3 +14,28 @@ Esto creará el directorio tutorial-env si no existe, y también creará directo
 
 Una ruta común para el directorio de un entorno virtual es .venv. Ese nombre mantiene el directorio típicamente escondido en la consola y fuera de vista mientras le da un nombre que explica cuál es el motivo de su existencia. También permite que no haya conflicto con los ficheros de definición de variables de entorno .env que algunas herramientas soportan.
 
+### 2. Activación del entorno virtual
+
+Una vez creado el entorno virtual, podrás activarlo.
+
+En Windows, ejecuta:
+
+
+```py
+tutorial-env\Scripts\activate
+```
+```py
+En Unix o MacOS, ejecuta:
+```
+```py
+source tutorial-env/bin/activate
+```
+
+# 3. Desactivación del entorno
+
+Para desactivar el entorno virtual, digita:
+
+```py
+deactivate
+```
+
