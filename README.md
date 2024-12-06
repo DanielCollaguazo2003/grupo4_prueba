@@ -1,41 +1,93 @@
-# Despliegue de la API
+# API de Reserva de Hotel - FastAPI
 
-## La API FastAPI indica que se cree un entorno virtual para que su uso sea correcto
+Este proyecto implementa una API REST para gestionar un sistema de reservas de hotel. Permite administrar **clientes**, **habitaciones**, **servicios** y **reservas** de manera eficiente. La API está construida con **FastAPI** y sigue principios de arquitectura limpia.
 
-### 1. Creación del entorno virtual
+## Integrantes del Proyecto
 
-Para crear un entorno virtual, decide en que carpeta quieres crearlo y ejecuta el módulo venv como script con la ruta a la carpeta:
+- **Collaguazo Malla Daniel Alfredo**
+- **Delgado Ibujes Domenika Sofia**
+- **Pañora Uruchima Jeison Fabian**
+- **Sigua Calle Paúl Mateo**
+- **Villalta Heredia José Miguel**
 
+## 1. Requisitos Previos
 
-py
-python -m venv tutorial-env
+Antes de comenzar, asegúrate de tener instalado:
 
-Esto creará el directorio tutorial-env si no existe, y también creará directorios dentro de él que contienen una copia del intérprete de Python y varios archivos de soporte.
+- Python 3.8 o superior
+- Git
+- FastAPI
+- Uvicorn
+  
+## 2. Configuración del Entorno Virtual
 
-Una ruta común para el directorio de un entorno virtual es .venv. Ese nombre mantiene el directorio típicamente escondido en la consola y fuera de vista mientras le da un nombre que explica cuál es el motivo de su existencia. También permite que no haya conflicto con los ficheros de definición de variables de entorno .env que algunas herramientas soportan.
+Se recomienda usar un entorno virtual para aislar las dependencias:
 
-### 2. Activación del entorno virtual
-
-Una vez creado el entorno virtual, podrás activarlo.
-
-En Windows, ejecuta:
-
-
-```py
-tutorial-env\Scripts\activate
+### En Windows:
+```bash
+python -m venv env
+env\Scripts\activate
 ```
-```py
-En Unix o MacOS, ejecuta:
+### En Unix o MacOS:
+```bash
+python3 -m venv env
+source env/bin/activate
 ```
-```py
-source tutorial-env/bin/activate
+
+## 3. Instalación de Dependencias
+
+Con el entorno virtual activado, instala las dependencias necesarias con:
+
+```bash
+pip install -r requirements.txt
 ```
 
-# 3. Desactivación del entorno
+Si el archivo `requirements.txt` no existe, instala FastAPI y Uvicorn manualmente:
 
-Para desactivar el entorno virtual, digita:
+```bash
+pip install fastapi uvicorn
+```
 
-```py
+## 4. Ejecución de la API
+
+Para iniciar el servidor de desarrollo:
+
+```bash
+uvicorn app:app --reload
+```
+
+- **app:app**: El primer `app` es el nombre del archivo y el segundo es la instancia de FastAPI.
+- **--reload**: Recarga automáticamente el servidor al detectar cambios.
+
+La API estará disponible en: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+## 5. Documentación Interactiva
+
+FastAPI ofrece una documentación interactiva generada automáticamente:
+
+- [Swagger UI](http://127.0.0.1:8000/docs)
+- [ReDoc](http://127.0.0.1:8000/redoc)
+
+## 6. Endpoints Principales
+
+### Clientes
+
+- **POST** `/clientes`: Agrega un nuevo cliente.
+
+### Servicios
+
+- **POST** `/servicios`: Agrega un nuevo servicio.
+
+### Habitaciones
+
+- **POST** `/habitaciones`: Agrega una nueva habitación.
+
+*(Agrega más detalles si es necesario)*
+
+## 7. Desactivación del Entorno Virtual
+
+Una vez terminado, puedes desactivar el entorno virtual con:
+
+```bash
 deactivate
 ```
-
