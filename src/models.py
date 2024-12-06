@@ -23,3 +23,17 @@ class Reserva(BaseModel):
     duracion_estancia: int
     estado_reserva: str
     monto_total: float
+
+class Factura(BaseModel):
+    numero_factura: int
+    fecha_emision: date
+    monto: float
+    estado_pago: str
+    subtotal: float
+    total: float
+    id_reserva: int
+
+class Pago(BaseModel):
+    fecha_pago: date
+    cantidad: float
+    id_factura: int
