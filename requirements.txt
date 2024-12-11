@@ -8,3 +8,4 @@ pytest
 pytest-mock
 coverage
 pytest-cov
+httpx
