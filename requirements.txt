@@ -1,0 +1,10 @@
+# Para instalar todas las librerias se usa el comando pip install -r requirements.txt, es preferible utilizar un entorno virtual
+
+fastapi
+uvicorn
+pyodbc
+psycopg2
+pytest
+pytest-mock
+coverage
+pytest-cov
